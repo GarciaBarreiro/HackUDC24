@@ -1,0 +1,24 @@
+# web/ build output
+web/dist/
+web/.output/
+
+# web/ dependencies
+web/node_modules/
+
+# web/ logs
+web/npm-debug.log*
+web/yarn-debug.log*
+web/yarn-error.log*
+web/pnpm-debug.log*
+
+
+# web/ environment variables
+web/.env
+web/.env.production
+
+# web/ macOS-specific files
+web/.DS_Store
+
+web/pnpm-lock.yaml
+
+web/.astro
