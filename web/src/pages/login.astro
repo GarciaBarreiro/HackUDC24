@@ -1,0 +1,80 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Headline from '~/components/blog/Headline.astro';
+
+import Form from '~/components/ui/Form.astro';
+
+const metadata = {
+  title: 'Log In',
+}
+---
+
+<Layout metadata={metadata}>
+
+  <Headline
+    title="Log In"
+    subtitle="or don't"
+  />
+
+  <div class="flex flex-col max-w-xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full mb-8">
+    <Form
+      inputs={[
+        {
+          type: 'text',
+          name: 'username',
+          label: 'Username',
+        },
+        {
+          type: 'password',
+          name: 'password',
+          label: 'Password',
+        }
+      ]}
+      button={[
+        {
+          type: 'submit',
+          text: 'Log In',
+          variant: 'primary',
+        },
+        {
+          text: '<span class="text-slate-500">Don\'t have an account?</span>&nbsp;Register',
+          variant: 'secondary',
+          type: 'link',
+          href: 'register',
+        },
+      ]}
+    />
+  </div>
+
+</Layout>
+
+<script>
+  const form = document.querySelector("#form");
+
+  async function sendData() {
+    const formData = new FormData(form);
+    var object = {};
+    formData.forEach((value, key) => object[key] = value);
+    var json = JSON.stringify(object);
+
+    try {
+      const response = await fetch("http://localhost:5000/auth/login", {
+        method: "POST",
+        headers: new Headers({'content-type': 'application/json'}),
+        body: json,
+      });
+      var rpjson = await response.json();
+      if (rpjson.message === 'Login successful') {
+        window.location.href = "dashboard";
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendData();
+  });
+</script>
