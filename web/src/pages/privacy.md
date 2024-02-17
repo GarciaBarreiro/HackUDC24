@@ -2,7 +2,11 @@
 title: 'Privacy Policy'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
+<!--
+SPDX-FileCopyrightText: 2024 Tomás García Barreiro, Ángel Suárez Torres, Muhammad Imran
 
+SPDX-License-Identifier: MIT-0
+-->
 _Last updated_: February 17, 2024
 
 This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.

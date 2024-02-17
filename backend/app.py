@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Tomás García Barreiro, Ángel Suárez Torres, Muhammad Imran
+#
+# SPDX-License-Identifier: MIT-0
+
 from flaskr import start_app
 
 app = start_app()
