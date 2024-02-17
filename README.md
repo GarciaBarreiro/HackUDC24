@@ -20,33 +20,52 @@ This Flask application provides a RESTful API for user management, file uploadin
 
 First, clone the repository to your local machine:
 
-bash
+```bash
 git clone https://yourrepositoryurl.git
+```
 
 Navigate to the project directory:
 
+```bash
 cd flask-file-upload-and-analysis
+```
 
 Create a virtual environment and activate it:
 
+```bash
 python -m venv venv
+```
+
 ## On Windows
+
+```
 venv\Scripts\activate
+```
+
 ## On Unix or MacOS
+
+```bash
 source venv/bin/activate
+```
 
 Install the required dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
 Set the environment variables for the Flask application:
 
+```bash
 export FLASK_APP=run.py
 export FLASK_ENV=development
+```
 
 Start the Flask application:
 
+```bash
 flask run
+```
 
 # Data processing
 
