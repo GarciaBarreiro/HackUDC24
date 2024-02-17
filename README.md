@@ -75,6 +75,8 @@ We have calculated reference values to compare the user's data with. We have cal
 
 We also can provide the graphs of the consumption data to the users on the app, like the consumption over time with the data they have already uploaded.
 
+Unfortunately we weren't able to implement the data analysis part with the app so this part is for the moment provided separetly in a Jupyter Notebook.
+
 ## Contributing
 
 Read more about [contributing guidelines](.github/CONTRIBUTING.md) and [code of conduct](.github/CODE_OF_CONDUCT.md) at the previous links.
