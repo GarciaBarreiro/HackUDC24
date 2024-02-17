@@ -34,9 +34,9 @@ cd flask-file-upload-and-analysis
 Create a virtual environment and activate it:
 
 python -m venv venv
-# On Windows
+## On Windows
 venv\Scripts\activate
-# On Unix or MacOS
+## On Unix or MacOS
 source venv/bin/activate
 
 Install the required dependencies:
