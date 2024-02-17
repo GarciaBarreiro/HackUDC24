@@ -1,0 +1,115 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Headline from '~/components/blog/Headline.astro';
+
+import Button from '~/components/ui/Button.astro';
+
+const metadata = {
+  title: 'Dashboard',
+}
+---
+
+<Layout metadata={metadata}>
+  
+  <Headline
+    title="Dashboard"
+  />
+
+  <div class="grid grid-cols-4 py-3 px-3 md:px-6 mx-40 w-auto">
+    <div class="flex">
+      <form>
+        <input class="cursor-pointer m-1 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900" type="date" id="start_date" name="start_date" min="1970-01-01">
+        <input class="cursor-pointer m-1 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900" type="date" id="end_date" name="end_date" min="1970-01-01">
+      </form>
+    </div>
+
+    <!-- empty divs, TODO: clean later -->
+    <div></div>
+    <div></div>
+
+    <div class="flex justify-end">
+      <input id="fileInput" type="file" style="display:none;"/>
+      <Button variant="primary" text="Upload CSV" icon="tabler:upload" onclick="document.getElementById('fileInput').click();"/>
+    </div>
+
+    <div class="grid grid-cols-subgrid gap-4 col-span-4 m-1">
+      <canvas id="chart">
+      </canvas>
+    </div>
+
+    <!-- empty divs, TODO: clean later -->
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- TODO: connect this with form above-->
+    <div class="flex justify-end">
+      <Button type="submit" variant="primary" text="Analyze" icon="tabler:report-analytics"/>
+    </div>
+  </div>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get template',
+        href: 'src/assets/examples/example.csv',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Download an example CSV so you know how to structure yours
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      This is a subtitle.
+    </Fragment>
+  </CallToAction>
+
+</Layout>
+
+<script>
+  // import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+  import Chart from "chart.js/auto";
+
+  function setTodayDate() {
+    var today = new Date().toISOString().slice(0,10);
+    document.getElementById('start_date').setAttribute('max', today);
+    document.getElementById('end_date').setAttribute('max', today);
+  }
+
+  function createChart() {
+    const options = {
+      plugins: {
+        colors: {
+          forceOverride: true
+        }
+      }
+    };
+
+    new Chart(document.getElementById('chart'), {
+      type: 'line',
+      data: {
+        labels: ['A', 'B', 'C'],
+        datasets: [
+          {
+            data: [10,20,30]
+          }
+        ]
+      }
+    });
+
+    Chart.defaults.backgroundColor = '#))0005';
+    Chart.defaults.borderColor = '#FFFFFF';
+    Chart.defaults.color = '#12F';
+  }
+
+  createChart();
+  setTodayDate();
+</script>
