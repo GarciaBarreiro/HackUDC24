@@ -22,3 +22,5 @@ web/.DS_Store
 web/pnpm-lock.yaml
 
 web/.astro
+
+test/

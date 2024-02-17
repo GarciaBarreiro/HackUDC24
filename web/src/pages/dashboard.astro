@@ -75,8 +75,15 @@ const metadata = {
 </Layout>
 
 <script>
-  // import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+  import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
   import Chart from "chart.js/auto";
+
+  /*
+  async function getCSV() {
+    const response = await fetch("localhost:5000/api/data.json");
+    return response.json();
+  }
+  */
 
   function setTodayDate() {
     var today = new Date().toISOString().slice(0,10);
@@ -84,7 +91,7 @@ const metadata = {
     document.getElementById('end_date').setAttribute('max', today);
   }
 
-  function createChart() {
+  function createChart(obj) {
     const options = {
       plugins: {
         colors: {
@@ -93,13 +100,21 @@ const metadata = {
       }
     };
 
+    console.log(obj);
+    var date = [];
+    var kwh = [];
+    for (const o of obj.data) {
+      kwh.push(o.kwh);
+      date.push(o.day + '/' + o.month + '/' + o.day + ' ' + o.hour);
+    }
     new Chart(document.getElementById('chart'), {
       type: 'line',
       data: {
-        labels: ['A', 'B', 'C'],
+        labels: date,
         datasets: [
           {
-            data: [10,20,30]
+            label: obj.data[0].username +"'s kwh",
+            data: kwh,
           }
         ]
       }
@@ -110,6 +125,19 @@ const metadata = {
     Chart.defaults.color = '#12F';
   }
 
-  createChart();
+  var json = '{"data":[' +
+             '{"year":2022,"month":12,"day":12,"hour":1,"kwh":0.032,"username":"frd"},' +
+             '{"year":2022,"month":12,"day":12,"hour":2,"kwh":0.302,"username":"frd"},' +
+             '{"year":2022,"month":12,"day":12,"hour":3,"kwh":3.032,"username":"frd"},' +
+             '{"year":2022,"month":12,"day":12,"hour":4,"kwh":3.332,"username":"frd"}' +
+             ']}';
+
+  createChart(JSON.parse(json));
   setTodayDate();
+  /*
+  getCSV().then((data) => {
+    console.log(data);
+  });
+  */
+
 </script>
