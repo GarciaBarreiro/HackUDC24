@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: 'Example'
-    template: '%s — Example'
+    default: 'ConOp'
+    template: '%s — ConOp'
   description: 'This is the default meta description of Example website'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: 'Example'
+    site_name: 'ConOp'
     images:
       - url: '~/assets/images/default.jpg'
         width: 1200
@@ -31,6 +31,7 @@ i18n:
   language: en
   textDirection: ltr
 
+# TODO: not needed (i think)
 apps:
   blog:
     isEnabled: true # If the blog will be enabled
