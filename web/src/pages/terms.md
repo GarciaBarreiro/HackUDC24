@@ -2,6 +2,11 @@
 title: 'Terms and Conditions'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
+<!--
+SPDX-FileCopyrightText: 2024 Tomás García Barreiro, Ángel Suárez Torres, Muhammad Imran
+
+SPDX-License-Identifier: MIT-0
+-->
 
 _Last updated_: February 17, 2024
 

@@ -1,3 +1,7 @@
+-- SPDX-FileCopyrightText: 2024 Tomás García Barreiro, Ángel Suárez Torres, Muhammad Imran
+--
+-- SPDX-License-Identifier: MIT-0
+
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS consumption;
 

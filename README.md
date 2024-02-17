@@ -77,4 +77,4 @@ We also can provide the graphs of the consumption data to the users on the app, 
 
 ## Contributing
 
-Read more about [contributing guidelines](./CONTRIBUTING.md) and [code of conduct](./CODE_OF_CONDUCT.md) at the previous links.
+Read more about [contributing guidelines](.github/CONTRIBUTING.md) and [code of conduct](.github/CODE_OF_CONDUCT.md) at the previous links.

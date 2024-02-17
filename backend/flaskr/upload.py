@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Tomás García Barreiro, Ángel Suárez Torres, Muhammad Imran
+#
+# SPDX-License-Identifier: MIT-0
+
 from flask import Blueprint, request, jsonify, current_app, session
 from werkzeug.utils import secure_filename
 from flaskr.auth import login_required
