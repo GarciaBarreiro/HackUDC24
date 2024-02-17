@@ -1,5 +1,6 @@
 backend/test/
 backend/venv/
+backend/uploads/
 
 # web/ build output
 web/dist/

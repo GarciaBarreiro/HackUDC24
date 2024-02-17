@@ -6,7 +6,8 @@ def start_app(test_config = None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY = '1',
-        DATABASE = os.path.join(app.instance_path, '../flaskr.sqlite')
+        DATABASE = os.path.join(app.instance_path, '../flaskr.sqlite'),
+        UPLOAD_FOLDER = os.path.join(os.getcwd(), 'uploads')
     )
     if test_config is None:
         # load the instance config, if it exists, when not testing
@@ -20,6 +21,8 @@ def start_app(test_config = None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
+
 
     from . import db
     db.init_app(app)
