@@ -1,4 +1,4 @@
-from yourapp import start_app
+from flaskr import start_app
 
 app = start_app()
 

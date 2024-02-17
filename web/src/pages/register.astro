@@ -60,14 +60,20 @@ const metadata = {
 
   async function sendData() {
     const formData = new FormData(form);
+    var object = {};
+    formData.forEach((value, key) => object[key] = value);
+    var json = JSON.stringify(object);
 
     try {
-      const response = await fetch("http://localhost:5000", {
+      const response = await fetch("http://localhost:5000/auth/register", {
         method: "POST",
-        body: formData, // TODO: JSON
+        headers: new Headers({'content-type': 'application/json'}),
+        body: json,
       });
-      console.log(await response);
-      console.log(await response.json());
+      var rpjson = await response.json();
+      if (rpjson.message === 'User successfully registered') {
+        window.location.href = "dashboard";
+      }
     } catch (e) {
       console.error(e);
     }
