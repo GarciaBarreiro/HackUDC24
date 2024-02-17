@@ -1,4 +1,4 @@
-#!/home/sisifo/Documents/hackUDC/backend/venv/bin/python3.11
+#!/home/sisifo/Documents/hackUDC/HackUDC24/backend/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
