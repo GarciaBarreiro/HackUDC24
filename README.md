@@ -12,7 +12,45 @@ Detailed descriptions are available at the web's [README](./web/README.md).
 
 ### Backend
 
-TODO
+This Flask application provides a RESTful API for user management, file uploading, and data analysis. It supports user registration and login, secure file uploads to a server with session-based authentication, and performs predefined data analysis tasks.
+
+## Features
+
+- **User Authentication:** Register new users and manage user login sessions.
+- **File Upload:** Securely upload files to the server with session-based authentication.
+- **Data Analysis:** Perform data analysis on uploaded files and return results.
+
+### Installing
+
+First, clone the repository to your local machine:
+
+bash
+git clone https://yourrepositoryurl.git
+
+Navigate to the project directory:
+
+cd flask-file-upload-and-analysis
+
+Create a virtual environment and activate it:
+
+python -m venv venv
+# On Windows
+venv\Scripts\activate
+# On Unix or MacOS
+source venv/bin/activate
+
+Install the required dependencies:
+
+pip install -r requirements.txt
+
+Set the environment variables for the Flask application:
+
+export FLASK_APP=run.py
+export FLASK_ENV=development
+
+Start the Flask application:
+
+flask run
 
 ## Contributing
 
