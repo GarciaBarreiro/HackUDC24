@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, jsonify
 
 def start_app(test_config = None):
     #Create and cofigure the app
@@ -24,7 +24,7 @@ def start_app(test_config = None):
     # a simple page that says hello
     @app.route('/hello')
     def hello():
-        return 'Hello, World!'
+        return jsonify(message='Hello, World!')
 
     from . import db
     db.init_app(app)
