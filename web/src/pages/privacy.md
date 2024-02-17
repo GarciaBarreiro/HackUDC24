@@ -2,6 +2,11 @@
 title: 'Privacy Policy'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
+<!--
+SPDX-FileCopyrightText: 2024 Tomás García Barreiro, Ángel Suárez Torres, Muhammad Imran
+
+SPDX-License-Identifier: MIT-0
+-->
 
 _Last updated_: January 06, 2023
 
