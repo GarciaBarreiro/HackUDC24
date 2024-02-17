@@ -2,13 +2,9 @@
 
 ConOp is a simple to use web app that'll help you optmize your electrical consumption.
 
-## Installing
-
-In order to install and host your own instance of ConOp, clone this file and run the following commands:
-
 # Web frontend
 
-Detailed descriptions are available at the web's [README](./web/README.md).
+Detailed install steps are available at the web's [README](./web/README.md).
 
 # Backend
 
@@ -51,6 +47,14 @@ export FLASK_ENV=development
 Start the Flask application:
 
 flask run
+
+# Data processing
+
+For the data processing of the electrical consumption data we have done several things:
+
+We have calculated reference values to compare the user's data with. We have calculated the average values for diferent seasons of the year, for different time frames and some more, so that we can compare the user's consumption with this.
+
+We also can provide the graphs of the consumption data to the users on the app, like the consumption over time with the data they have already uploaded.
 
 ## Contributing
 
